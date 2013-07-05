@@ -22,9 +22,15 @@ if ( !class_exists('TwigWp') ) {
 			Twig_Autoloader::register();
 
 			$loader = new Twig_Loader_Filesystem('/');
-			$this->twig = new Twig_Environment($loader, array(
-				'cache' => plugin_dir_path(__FILE__) . '/cache',
-			));
+
+			if (WP_DEBUG) {
+				$this->twig = new Twig_Environment($loader);
+			} else {
+				$this->twig = new Twig_Environment($loader, array(
+					'cache' => plugin_dir_path(__FILE__) . '/cache',
+				));
+			}
+
 		}
 
 		/**
