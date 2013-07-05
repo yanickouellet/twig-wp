@@ -3,7 +3,7 @@
 if ( !class_exists('TwigWp') ) {
 
 	/**
-	 * Class ZRoles
+	 * Class TwigWp
 	 * Main class of the plugin, using singleton pattern
 	 */
 	class TwigWp {
@@ -48,7 +48,7 @@ if ( !class_exists('TwigWp') ) {
 
 
 		/**
-		 * Get an instance of ZDebug
+		 * Get an instance of TwigWp
 		 */
 		public static function get_instance()
 		{
